@@ -1,8 +1,8 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content" *ngIf="operation">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"> <span class="badge bg-success">{{operation.productName}}</span> </h5> 
+        <div class="modal-header bg-info text-white">
+          <h5 class="modal-title" id="exampleModalLabel">  {{operation.productName}} </h5> 
           <button type="button" #closeBtn class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">

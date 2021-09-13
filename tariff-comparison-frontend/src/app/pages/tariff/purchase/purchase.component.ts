@@ -46,7 +46,7 @@ export class PurchaseComponent implements OnInit {
         this.closeBtn.nativeElement.click();
 
         swal.fire({
-          icon: 'info',
+          icon: 'success',
           title: 'Successful purcharse',
           text:  `product "${this.operation.productName}" with a cost €${this.operation.cost}`
         });
