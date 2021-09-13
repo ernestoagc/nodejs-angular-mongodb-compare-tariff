@@ -1,7 +1,9 @@
 const chai = require("chai");
 const sinon = require("sinon");
 const expect = chai.expect;
-const faker = require("faker");
+
+require('../config/setConfig');
+
 const tariffService = require('./tariff.service');
 describe("tariffService", function() {
 

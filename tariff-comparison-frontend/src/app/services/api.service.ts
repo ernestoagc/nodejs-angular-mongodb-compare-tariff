@@ -11,7 +11,7 @@ import{ProductCompare, Operation,ProductQuantity} from '../model/model.index'
 })
 export class ApiService {
 
-  //private urlEndPoint:string="https://messageangular.herokuapp.com/message/";
+  //urlEndPoint:string="https://tariffcompareapp.herokuapp.com/product/";
   urlEndPoint:string=AppConstants.productPath;
   
   private httpHeaders:HttpHeaders = new HttpHeaders({'Content-Type':'application/json'});

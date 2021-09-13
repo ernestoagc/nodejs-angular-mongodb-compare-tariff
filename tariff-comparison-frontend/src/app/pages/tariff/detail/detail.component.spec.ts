@@ -2,11 +2,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ApiService } from 'src/app/services/services.index';
 import swal from 'sweetalert2'
 import {ProductCompare,Product} from '../../../model/model.index'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DetailComponent } from './detail.component';
 import { Observable ,EMPTY, of} from 'rxjs';  
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { NO_ERRORS_SCHEMA ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {ValidationInterceptor} from '../../../interceptor/validation.interceptor';
 
 import { By } from '@angular/platform-browser'; 
 
@@ -17,7 +18,11 @@ describe('DetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ DetailComponent ],
-      providers:[ApiService],
+      providers:[{
+        provide: HTTP_INTERCEPTORS,
+        useClass: ValidationInterceptor,
+        multi: true
+      },ApiService],
       imports: [ HttpClientModule ,ReactiveFormsModule,FormsModule],
       schemas: [ NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA ]
     })
@@ -62,13 +67,5 @@ describe('DetailComponent', () => {
   })
 
 
-  it('validate comsumption value is mandatory', () => {
-    
-    const buttonSimulate = fixture.debugElement.query( By.css('.btn-primary') );
- 
-    buttonSimulate.triggerEventHandler('click', null);
-    expect( swal.isVisible() ).toBeTruthy();
-
-  });
 
 });

@@ -39,8 +39,7 @@ describe("ProductController", function() {
 
 
         await productController.productCompare(req, res);
-        console.log(status.args);
-        console.log(json.args);
+       
 
         expect(status.calledOnce).to.be.true;
         expect(status.args[0][0]).to.equal(200);

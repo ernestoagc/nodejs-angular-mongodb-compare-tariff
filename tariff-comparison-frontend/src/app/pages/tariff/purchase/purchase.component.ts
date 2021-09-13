@@ -2,6 +2,7 @@ import { Component, OnInit ,Input,Output,EventEmitter,ViewChild,ElementRef} from
 
 import {Operation, ProductQuantity} from '../../../model/model.index'
 import { UtilService,ApiService } from 'src/app/services/services.index';
+import swal from 'sweetalert2'
 @Component({
   selector: 'app-purchase',
   templateUrl: './purchase.component.html',
@@ -44,7 +45,11 @@ export class PurchaseComponent implements OnInit {
       ()=>{
         this.closeBtn.nativeElement.click();
 
-       // this.currencyExchange = new CurrencyExchange();     
+        swal.fire({
+          icon: 'info',
+          title: 'Successful purcharse',
+          text:  `product "${this.operation.productName}" with a cost €${this.operation.cost}`
+        });
       }
   
     );

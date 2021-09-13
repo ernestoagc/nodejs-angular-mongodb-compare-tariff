@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {ProductCompare,Product, Operation,ProductQuantity} from '../../model/model.index'
+import { Component, OnInit ,Input} from '@angular/core';
+import {ProductCompare,Product, Operation,ProductQuantity,} from '../../model/model.index'
 @Component({
   selector: 'app-tariff',
   templateUrl: './tariff.component.html',
@@ -11,10 +11,11 @@ export class TariffComponent implements OnInit {
   productB:Product;
   operation:Operation;
   productQuantity:ProductQuantity;
+  productCompare:ProductCompare;
 
   constructor() { 
     this.productQuantity= new ProductQuantity();
-    
+    this.productCompare = new ProductCompare();
   }
 
 
@@ -22,6 +23,7 @@ export class TariffComponent implements OnInit {
     this.productQuantity=productQuantity;
     this.productA=null;
     this.productB=null;
+    this.productCompare = new ProductCompare();
   }
   ngOnInit(): void {
   }
@@ -43,8 +45,5 @@ export class TariffComponent implements OnInit {
 
   }
 
-  infoProductChoosed(product:Product){
-
-  }
 
 }
