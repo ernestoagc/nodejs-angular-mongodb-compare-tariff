@@ -17,7 +17,7 @@ Also, in the next link https://tariffcompare.web.app/  you can visit a demo of t
 
 ![](https://i.imgur.com/5yZJIiS.png)
 
-The application also, permit you save information about what product is most popular beeween the user.
+The application also, permit you save information about what product is most popular between the user.
 
 ![](https://i.imgur.com/glhrf5F.png)
 
