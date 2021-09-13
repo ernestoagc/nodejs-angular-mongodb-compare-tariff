@@ -1,0 +1,22 @@
+<div class="card">
+
+  <div class="card-header ">
+    Simulate Cost Product
+  </div>
+  <div class="card-body default-backgroud">
+    <form>
+
+      <div class="input-group mb-3">
+        <input name="comsumption"
+          [(ngModel)]="productCompare.comsumption" type="number" class="form-control" placeholder="Comsumption"
+          aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">kWh/year</span>
+
+      </div>
+
+      <div class="form-floating mb-2">
+        <button (click)="doCompareProduct()" type="button" class="btn btn-primary ml-3">Simulate</button>
+      </div>
+    </form>
+  </div>
+</div>

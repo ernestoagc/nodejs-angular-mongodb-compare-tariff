@@ -1,0 +1,17 @@
+<div class="col">
+        <div class="card "   [ngClass]="(product.recommended)?'recommend-card':'default-background'" >
+          <div class="card-body text-center">
+            <div class="border-bottom">
+              <h3>{{product.name}}</h3>
+              <h1><sub>€</sub>{{product.cost | number:'.0-2'}}<span>/ year</span></h1>
+
+              <div *ngIf="product.recommended" class="recommend-txt">Recommended</div>
+            </div>
+            <p></p>
+            
+            <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="productChoosed()">Purchase now</button>
+          </div>
+        </div>
+      </div>
+      
+      

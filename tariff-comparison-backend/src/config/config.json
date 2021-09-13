@@ -1,0 +1,9 @@
+{    
+    "appName": "tariff comparison",
+    "host":"localhost",
+    "port": "8585",
+    "productACode": "A",
+    "productBCode": "B",
+    "productAName": "Basic electricity",
+    "productBName": "Packaged"
+}

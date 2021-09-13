@@ -1,0 +1,71 @@
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    }
+    li{
+    padding-bottom: 20px;
+    font-size: 20px;
+    }
+    sub{
+    font-size: 16px;
+    }
+    h1{
+    font-size: 48px;
+    font-weight: 600;
+    }
+    span{
+    font-size: 30px;
+    font-weight: 300;
+    }
+    h5{
+    padding-top: 15px;
+    }
+    .card{
+        overflow: hidden;
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    border-radius: 16px;
+    }
+    .card:hover{
+      box-shadow: 0 0 11px rgba(33,33,33,.2);
+      
+    }
+
+    .recommend-card{
+        background-color: #c7e1e6;
+        
+    }
+    .default-background{
+        background-color: #dddddd;
+    }
+
+    .card-body{
+    padding: 25px 0;
+    }
+
+    .recommend-txt {
+        background: #14bad0;
+        color: #fff;
+        transform: rotate(45deg);
+        padding: 6px 22px;
+        position: absolute;
+        top: 18px;
+        right: -34px;
+        font-size: 14px;
+    }
+
+    .btn{
+    padding: 8px 25px;
+    font-size: 20px;
+    border-radius: 0px;
+    }
+    .btn-custom{
+    background-color: #0F044C;
+    color: #fff;
+    }
+    .btn-custom:hover{
+    background-color: #fff;
+    color: #0F044C;
+    border-color:#0F044C ;
+    }

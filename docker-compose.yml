@@ -1,0 +1,50 @@
+version: '3.5'
+services:
+
+  dbtariff-comparisonTest:  
+    container_name: dbtariff-comparisonTest
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"    
+    networks:
+      - tariff-comparison
+      
+  tariff-comparison-backend:
+    restart: on-failure
+    container_name: tariff-comparison-backend
+    build: ./tariff-comparison-backend/
+    depends_on:
+      - dbtariff-comparisonTest
+    expose:
+      - "8585"
+    ports:
+      - 8585:8585
+    environment:
+      PORT: "8585"
+      MONGODB_CNN: "mongodb://dbtariff-comparisonTest:27017/dbTariff"
+      PLATFORM: "Container"
+      HOST: "tariff-comparison-backend"
+    links:
+      - dbtariff-comparisonTest
+    networks:
+      - tariff-comparison
+      
+  tariff-comparison-frontend:
+    restart: on-failure
+    container_name: tariff-comparison-frontend
+    build: ./tariff-comparison-frontend/
+    depends_on:
+      - tariff-comparison-backend
+    expose:
+      - "80"
+    ports:
+      - 8084:80
+    links:
+      - tariff-comparison-backend
+    networks:
+      - tariff-comparison  
+
+networks:
+  tariff-comparison:
+    name: tariff-comparison-net 
