@@ -5,5 +5,17 @@
     "productACode": "A",
     "productBCode": "B",
     "productAName": "Basic electricity",
-    "productBName": "Packaged"
+    "productBName": "Packaged",
+    "products":[
+    {
+        "name":"Basic electricity",
+        "code":"A",
+        "equation": "5*12 + $comsumption * 0.22"
+    },
+    {
+        "name":"Packaged",
+        "code":"B",
+        "equation":"$comsumption>4000?(800+($comsumption-4000)*0.3 ):800"
+    }  
+    ]
 }
