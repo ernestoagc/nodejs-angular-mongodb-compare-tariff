@@ -37,7 +37,7 @@ const compareProductVersion2 = (comsumption)=>{
                 }));
 
                 
-            products.find(pro =>pro.cost==min)[0].recommended=true;
+            products.find(pro =>pro.cost==min).recommended=true;
 
             return products;
         } catch (error) {
