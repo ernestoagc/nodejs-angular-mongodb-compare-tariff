@@ -11,32 +11,38 @@ function replaceAll(str, find, replace) {
   }
 
 const compareProductVersion2 = (comsumption)=>{
-    
-    let products = []; 
-
-        for(let i=0;i<config.products.length;i++){
+       try {
+                
             
-            let variableString=replaceAll(config.products[i].equation,"$comsumption",comsumption);
-            let productResult =
-            {   comsumption:comsumption,
-                cost:eval(variableString),
-                recommended:false,
-                code:config.products[i].code,
-                name:config.products[i].name
-            }
-    
-            products.push(productResult);
+            
+            let products = []; 
 
+                for(let i=0;i<config.products.length;i++){
+                    
+                    let variableString=replaceAll(config.products[i].equation,"$comsumption",comsumption);
+                    let productResult =
+                    {   comsumption:comsumption,
+                        cost:eval(variableString),
+                        recommended:false,
+                        code:config.products[i].code,
+                        name:config.products[i].name
+                    }
+            
+                    products.push(productResult);
+
+                }
+
+            let min = Math.min.apply(null, products.map(function(item) {
+                return item.cost;
+                }));
+
+                
+            products.find(pro =>pro.cost==min)[0].recommended=true;
+
+            return products;
+        } catch (error) {
+            return ErrorException.internal(`Failed to compare: ${error}`);
         }
-
-    let min = Math.min.apply(null, products.map(function(item) {
-        return item.cost;
-        }));
-
-          
-    products.find(pro =>pro.cost==min).recommended=true;
-
-    return products;
           
 }
 
